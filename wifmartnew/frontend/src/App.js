@@ -79,16 +79,7 @@ function App() {
           fetchUserLikedProduct,
         }}
       >
-        <ToastContainer
-          position="top-center"    // Position at the top center
-          autoClose={300}         // Close after 0.3 second
-          limit={1}                // Only display 1 toast at a time
-          closeOnClick             // Close toast on click
-          pauseOnHover             // Pause auto-close on hover
-          draggable                // Allow dragging of toast
-          theme="light"            // Optional: set theme to "light" or "dark"
-          newestOnTop={true}       // Show the newest toast on top
-        />
+        <ToastContainer position="top-center" />
 
         <Header />
         <main className="min-h-[calc(100vh-120px)] pt-16">
