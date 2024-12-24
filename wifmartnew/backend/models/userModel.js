@@ -2,37 +2,27 @@ const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema(
   {
+    name: String,
     email: {
       type: String,
       unique: true,
       required: true,
-      lowercase: true, // Automatically convert email to lowercase
-      trim: true, // Remove leading/trailing whitespace
     },
-    password: {
-      type: String,
-      required: true,
-    },
+    password: String,
+    profilePic: String,
     role: {
       type: String,
       default: 'GENERAL',
     },
-    status: {
-      type: String,
-      default: 'Active', // Default status
-    },
-    location: {
-      type: String,
-      default: 'Not Specified', // Default location
-    },
+    location: String, // Add this field
+    hostel: String,    // Add this field
   },
   {
     timestamps: true,
   }
 );
 
-// Ensure case-insensitive uniqueness for email
-userSchema.path('email').index({ unique: true });
+const userModel = mongoose.model('User', userSchema); // Updated model name
 
-const userModel = mongoose.model('User', userSchema);
-module.exports = userModel;
+module.exports = userModel
+
