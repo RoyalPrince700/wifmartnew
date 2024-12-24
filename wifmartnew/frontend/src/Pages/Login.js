@@ -1,5 +1,4 @@
 import React, { useContext, useState } from 'react'
-import loginIcons from '../assest/signin.gif'
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from 'react-toastify';
