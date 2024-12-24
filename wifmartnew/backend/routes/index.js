@@ -43,12 +43,18 @@ const assignOrderToLA = require('../controller/logistic/assignOrderToLA');
 const getActiveLogisticsAssociates = require('../controller/logistic/getActiveLA');
 const getOrderForLA = require('../controller/logistic/getOrderforLA');
 const getActiveLAs = require('../controller/logistic/getActiveLA');
+const likedProductController = require('../controller/user/likedProductController');
+const countLikedProduct = require('../controller/user/countLikedProduct');
+const likedProductView = require('../controller/user/likedProductView');
 
 // Authentication routes
 router.post("/signup", UserSignUpController);
 router.post("/signin", userSignInController);
 router.get("/user-details", authToken, userDetailsController);
 router.get("/userLogout", userLogout);
+router.post("/liked-product", authToken, likedProductController)
+router.get("/countLikedProduct", authToken,countLikedProduct)
+router.get("/viewLikedProduct",authToken,likedProductView)
 
 // Token verification route
 router.get("/auth/verify", authToken, (req, res) => {
