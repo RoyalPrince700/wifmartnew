@@ -15,8 +15,7 @@ async function authToken(req,res,next){
         }
 
             // verify a token symmetric
-            jwt.verify(token,  process.env.TOKEN_SECRET_KEY, 
-              function(err, decoded) 
+            jwt.verify(token,  process.env.TOKEN_SECRET_KEY, function(err, decoded) 
             {
                 console.log(err)
                 console.log("decocded", decoded)
@@ -43,4 +42,3 @@ async function authToken(req,res,next){
 }
 
 module.exports = authToken
-

@@ -1,10 +1,11 @@
 import React, { useContext, useState } from 'react'
-import loginIcons from '../assets/signin.gif'
+import loginIcons from '../assest/signin.gif'
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from 'react-toastify';
 import SummaryApi from '../common';
 import Context from '../context';
+import Logo from '../components/Logo';
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -57,8 +58,17 @@ const Login = () => {
 
   return (
     <section id='login'>
-      <div className='mx-auto container p-4 mt-16 lg:mt-0'>
-        <div className='bg-white mx-auto p-4 w-full max-w-md py-5'>
+      <div className='mx-auto container p-4 mt-2 lg:mt-0 flex flex-col items-center gap-4'>
+
+      <div className='flex items-center'>
+          <Link to={"/"}>
+                <Logo w="100px" h="25px" />
+              </Link>
+          </div>
+
+        <div className='bg-white mx-auto p-4 w-full max-w-md py-3'>
+
+          
           
 
           <form className='pt-6 flex flex-col gap-2' onSubmit={handleSubmit}>
@@ -123,7 +133,3 @@ const Login = () => {
 }
 
 export default Login;
-
-
-
-
